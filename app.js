@@ -1,5 +1,5 @@
 import express from "express";
-import { mongoDBURL } from "./config.js";
+import { mongoDBURL } from ".env";
 import mongoose from "mongoose";
 import booksRoute from "./routes/booksRoute.js";
 import cors from "cors";
