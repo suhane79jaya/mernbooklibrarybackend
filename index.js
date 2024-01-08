@@ -1,5 +1,5 @@
 import express from "express";
-import { PORT, mongoDBURL } from "./config.js";
+import { mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import booksRoute from "./routes/booksRoute.js";
 import cors from "cors";
@@ -7,6 +7,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import { UserModel } from "./models/User.js";
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -91,9 +92,6 @@ app.get("/logout", (res, req) => {
   res.clearCookie("token", { path: "/" });
   res.status(200).send("User logout");
 });
-//step2 of deployment
-const PORT = process.env.PORT || 5000;
-//step 3 of deployment
 
 mongoose
   .connect(mongoDBURL)
