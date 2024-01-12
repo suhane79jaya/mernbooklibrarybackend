@@ -1,5 +1,5 @@
 import express from "express";
-import { PORT, mongoDBURL } from "./config.js";
+import { mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import booksRoute from "./routes/booksRoute.js";
 import cors from "cors";
@@ -92,7 +92,7 @@ app.get("/logout", (res, req) => {
   res.status(200).send("User logout");
 });
 //step2 of deployment
-//const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 //step 3 of deployment
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("frontend/build"));
