@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "MamadTaheri68",
+  "author": "Jaya Suhane",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",

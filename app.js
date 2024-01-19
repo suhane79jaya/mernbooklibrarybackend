@@ -1,5 +1,6 @@
 import express from "express";
-import { mongoDBURL } from "./config.js";
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
 import booksRoute from "./routes/booksRoute.js";
 import cors from "cors";
@@ -97,8 +98,9 @@ const PORT = process.env.PORT || 5000;
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("frontend/build"));
 // }
+let con = process.env.mongoDBURL;
 mongoose
-  .connect(mongoDBURL)
+  .connect(con)
   .then(() => {
     console.log("App connected to database");
     app.listen(PORT, () => {
