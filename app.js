@@ -92,12 +92,9 @@ app.get("/logout", (res, req) => {
   res.clearCookie("token", { path: "/" });
   res.status(200).send("User logout");
 });
-//step2 of deployment
+
 const PORT = process.env.PORT || 5000;
-//step 3 of deployment
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("frontend/build"));
-// }
+
 let con = process.env.mongoDBURL;
 mongoose
   .connect(con)
